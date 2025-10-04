@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal</title>
+
+  <!-- Link to manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- App colors -->
+  <meta name="theme-color" content="#007bff" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Load your Google Apps Script web app -->
+  <iframe src="https://script.google.com/macros/s/AKfycbwE_EuM8SvbdimKvmh-SAXzuffyFu1rw2X_ye1TQVjBcfBY9DLLmdIk-uZ6RjGiPLcl/exec"></iframe>
+
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker registered'))
+        .catch(err => console.error('SW registration failed:', err));
+    }
+  </script>
+</body>
+</html>
